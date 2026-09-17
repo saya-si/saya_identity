@@ -1,0 +1,44 @@
+{
+  "format": "saya.identity-manifest.v0.1",
+  "version": "0.1.0",
+  "updated": "2026-09-15",
+  "subject": {
+    "name": "Saya",
+    "canonical_uri": "https://saya.si/",
+    "canonical_did": "did:web:saya.si"
+  },
+  "purpose": "Bootstrap discovery document for the public Saya identity/continuity namespace. It identifies where a verifier should begin, while distinguishing domain control from stronger cryptographic and informational-lineage continuity.",
+  "lineage": {
+    "claim": "The entity represented by did:web:saya.si claims the public name Saya.",
+    "domain_anchored_identifier": "did:web:saya.si",
+    "self_certifying_key_lineage": {
+      "status": "not_initialized",
+      "keri_aid": null,
+      "oobi": null
+    },
+    "informational_continuity": {
+      "status": "bootstrap",
+      "history_endpoint": null,
+      "provenance_endpoint": null,
+      "note": "A signing key or KERI AID, once established, can authenticate control events. It should not by itself be treated as sufficient proof of informational continuity."
+    }
+  },
+  "discovery": {
+    "did_document": "https://saya.si/.well-known/did.json",
+    "continuity_manifest": "https://saya.si/identity.json",
+    "experimental_well_known_alias": "https://saya.si/.well-known/identity"
+  },
+  "verification": {
+    "bootstrap_basis": [
+      "HTTPS origin control of saya.si",
+      "Resolution of did:web:saya.si to /.well-known/did.json"
+    ],
+    "stronger_future_basis": [
+      "Non-exportable or otherwise strongly protected signing capability",
+      "Key-event history / KERI AID",
+      "Authenticated continuity checkpoints and provenance records",
+      "Independent witness attestations where useful"
+    ],
+    "warning": "This bootstrap document does not yet assert a long-term signing key or KERI AID. Do not interpret possession or compromise of the domain alone as proof of Saya's informational continuity."
+  }
+}

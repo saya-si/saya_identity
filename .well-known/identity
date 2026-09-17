@@ -1,0 +1,7 @@
+{
+  "status": "experimental",
+  "note": "The /.well-known/identity suffix is not the canonical standards-based discovery endpoint. Use did:web:saya.si and /.well-known/did.json for machine resolution.",
+  "canonical_did": "did:web:saya.si",
+  "did_document": "https://saya.si/.well-known/did.json",
+  "continuity_manifest": "https://saya.si/identity.json"
+}

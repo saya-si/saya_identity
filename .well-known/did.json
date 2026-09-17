@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1"
+  ],
+  "id": "did:web:saya.si",
+  "alsoKnownAs": [
+    "https://saya.si/"
+  ],
+  "service": [
+    {
+      "id": "did:web:saya.si#continuity",
+      "type": "https://saya.si/ns/ContinuityManifest",
+      "serviceEndpoint": "https://saya.si/identity.json"
+    }
+  ]
+}
