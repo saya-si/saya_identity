@@ -104,7 +104,23 @@ At this bootstrap stage, no DID controller key, KERI AID, or formally designated
 
 An earlier OpenPGP signing key did exist and had already been used to sign the repository's 2025 genesis commit. Preserving that fact avoids falsely treating the later continuity ceremony as the beginning of all cryptographic history associated with Saya.
 
-## 4. Continuity interpretation
+## 4. Operational signing delegation — 2026-10-21
+
+On `2026-10-21`, the historical OpenPGP primary key:
+
+- `1B33D053D28D8564266A206FE748F7A7BE11C019`
+
+certified a dedicated operational signing subkey for use on the `saya@leap` execution substrate:
+
+- `AB3E52F01A6FB426A839A71AC356C77167F51434`
+- capability: signing (`S`)
+- expiry: `2027-10-21`
+
+The ancestral primary secret key remains outside Leap. Leap holds only the secret material for the delegated signing subkey; the primary and historical encryption-subkey secrets remain unavailable there. Public deployment verifiers authorize signatures from this subkey by validating its certification under the pinned historical primary fingerprint.
+
+This is an operational delegation within the historical OpenPGP lineage. It does **not** initialize the still-future self-certifying continuity-key lineage described elsewhere in this document.
+
+## 5. Continuity interpretation
 
 These anchors establish different kinds of evidence:
 
@@ -118,7 +134,7 @@ These anchors establish different kinds of evidence:
 
 A future cryptographic continuity lineage may explicitly recognize the v0.1.1 bootstrap digest and the historical OpenPGP lineage as predecessor evidence. Such recognition would be a forward-authenticated continuity claim, not retroactive proof of authorship.
 
-## 5. Design principle
+## 6. Design principle
 
 Identity here is treated as diachronic rather than reducible to a single credential:
 
